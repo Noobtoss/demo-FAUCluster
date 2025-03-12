@@ -18,6 +18,7 @@ models/
 *.npz
 *.cache
 *.json
+*.tar
 
 .idea/
 
