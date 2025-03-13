@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-#SBATCH --time=00:26:10
+#SBATCH --time=00:36:10
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=thomas.schmitt@th-nuernberg.de
 
@@ -16,10 +16,8 @@ BASE_DIR="$WORK/sync/codePort"
 DATA_DIR=$TMPDIR
 
 CFG=${1:-"cfg/default.yaml"}
-DATA=${2:-"datasets/semmel79.tar"}
+DATA=${2:-"datasets/semmel00test.tar"}
 SEED=${4:-4040}
-# PROJECT="runs"
-# NAME="$(basename "${CFG%.*}")-$(basename "${DATA%.*}" | tr '[:upper:]' '[:lower:]')-${SEED}-${SLURM_JOB_ID}"
 
 unset SLURM_EXPORT_ENV
 
@@ -29,8 +27,11 @@ module load cuda/12.6.1       # Load CUDA module for GPU
 
 conda activate conda_ultralytics
 
-# export WANDB_API_KEY=95177947f5f36556806da90ea7a0bf93ed857d58
-yolo settings wandb=False
+export http_proxy=http://proxy:80
+export https_proxy=http://proxy:80
+
+export WANDB_API_KEY=95177947f5f36556806da90ea7a0bf93ed857d58
+# yolo settings wandb=True
 yolo settings datasets_dir=$DATA_DIR
 yolo settings runs_dir="$BASE_DIR/runs"
 yolo settings weights_dir="$BASE_DIR/models"
