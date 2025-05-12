@@ -3,6 +3,8 @@
 #SBATCH --output=logs/R-%j.out
 #SBATCH --gres=gpu:a100:2
 #SBATCH --partition=a100
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
 #SBATCH --time=00:26:10
 #SBATCH --mail-type=ALL
