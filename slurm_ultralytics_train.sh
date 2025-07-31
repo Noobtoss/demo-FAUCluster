@@ -44,4 +44,4 @@ echo $DATA_DIR
 # [ -e "$DATA_DIR/dataset.yaml" ] && echo "Exists: $DATA_DIR/dataset.yaml" || echo "Missing: $DATA_DIR/dataset.yaml"
 # [ -e "$BASE_DIR/models/yolo11n.pt" ] && echo "Exists: $BASE_DIR/models/yolo11n.pt" || echo "Missing: $BASE_DIR/models/yolo11n.pt"
 
-srun python $BASE_DIR/src/yolo_train.py --cfg $BASE_DIR/$CFG --data "$DATA_DIR/dataset.yaml" --seed $SEED
+srun python $BASE_DIR/src/ultralytics_train.py --cfg $BASE_DIR/$CFG --data "$DATA_DIR/dataset.yaml" --seed $SEED
