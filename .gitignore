@@ -4,8 +4,7 @@ dataset/
 datasets/
 *results/
 results*/
-model/
-models/
+checkpoints/
 *.pkl
 *.pth
 *.mlpackage
