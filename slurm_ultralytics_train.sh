@@ -25,7 +25,7 @@ module purge                  # Purge any pre-existing modules
 module load python/3.12-conda # Load Python/Conda module
 module load cuda/12.6.1       # Load CUDA module for GPU
 
-conda activate conda_ultralytics
+conda activate conda-ultralytics
 
 export http_proxy=http://proxy:80
 export https_proxy=http://proxy:80

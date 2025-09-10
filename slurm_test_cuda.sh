@@ -18,6 +18,6 @@ module purge
 module load python/3.12-conda
 module load cuda/12.6.1
 
-conda activate conda_ultralytics
+conda activate conda-ultralytics
 
 srun python src/test_cuda.py
