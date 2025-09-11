@@ -12,7 +12,7 @@
 
 mkdir -p logs
 
-BASE_DIR="$WORK/sync/demo-FAUCluster"
+BASE_DIR="$WORK/code-nexus/demo-FAUCluster"
 DATA_DIR=$TMPDIR
 
 CFG=${1:-"cfg/default.yaml"}
